@@ -74,6 +74,7 @@ For each frame (*frame_name*) in a video (*video_id*) that has bounding boxes an
    1.1 It can return all the video frames (*return_frame* = RETURN_ALL_FRAMES) or only the first-and-last frames (*return_frame* = RETURN_ONLY_FIRST_AND_LAST), the default behaviour  
 3. from Something-else based on *video_id* and *frame_name*: bounding box (x1, y1, x2, y2) and category (integer-encoded, description)
 4. from PDDL definitions based on *video_id*, *Something-something placeholders*, and *Something-else bounding box category description*: lists of action pre-conditions and effects (post-conditions)
+
    3.1 The first half of the list has all possible predicates. Each position describes whether the predicate is AFFIRMATIVE, NEGATIVE, OR NONAPPLICABLE
    3.2 The second half of the list has the inverse for AFFIRMATIVE and NEGATIVE predicates.
    3.3 All possible predicates are listed in the properties *pddl_domain_predicates_single* and *pddl_domain_predicates_double*.
