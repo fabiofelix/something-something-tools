@@ -76,6 +76,8 @@ For each frame (*frame_name*) in a video (*video_id*) that has bounding boxes an
 4. from PDDL definitions based on *video_id*, *Something-something placeholders*, and *Something-else bounding box category description*: lists of action pre-conditions and effects (post-conditions)
 
    3.1 The first half of the list has all possible predicates. Each position describes whether the predicate is AFFIRMATIVE, NEGATIVE, OR NONAPPLICABLE
+
    3.2 The second half of the list has the inverse for AFFIRMATIVE and NEGATIVE predicates.
+   
    3.3 All possible predicates are listed in the properties *pddl_domain_predicates_single* and *pddl_domain_predicates_double*.
 5. It also returns a bounding box with all objects present in Something-else and PDDL definitions.
