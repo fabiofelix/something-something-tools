@@ -1,0 +1,6 @@
+torch
+torchvision
+moviepy==1.0.3
+opencv-python
+matplotlib
+segment_anything @ git+https://github.com/facebookresearch/segment-anything.git

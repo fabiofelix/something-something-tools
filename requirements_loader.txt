@@ -1,0 +1,4 @@
+torch
+opencv-python
+scikit-learn
+pddl @ git+https://github.com/beasteers/pddl.git@domain-axioms

@@ -1,0 +1,138 @@
+========================== TESTING 121896==========================
+
+|- Something-something placeholders
+
+  ['paper', 'a plant holder']
+
+|- Something-else categories
+
+  ['paper', 'plant holder', 'hand', '']  
+
+|- PDDL action description
+
+  (:action stuff
+      :parameters (?a - sth ?b - sth)
+      :precondition (and 
+                        (not (= ?a ?b)) 
+                        (not (far ?b)) 
+                        (fits ?a ?b) 
+                        (not (full ?b)) 
+                        (in ?a hand) 
+                        (not (is-rigid ?a)) 
+                        (not (touching ?a ?b)) 
+                        (not (touching ?b hand)) 
+                        (visible ?b)
+                    )
+      :effect (and 
+                  (in ?a ?b) 
+                  (not (touching ?a hand))
+              )
+  ) 
+
+|- Dataloader output PDDL vectors for pre- and pos- conditions
+
+  1. Preconditions (first frame)
+
+    Note: p and ~p are halves of the same vector.
+          None = NONAPPLICABLE = -1, False = NEGATIVE = 0, True = AFFIRMATIVE = 1
+
+   +---------------------------------------------------+
+                    hand         obj 1         obj 2
+   +---------+    +--------+    +--------+    +--------+
+   predicates      p   ~p        p    ~p       p    ~p 
+   +---------+    +--------+    +--------+    +--------+
+   broken         None  None    None  None    None  None  
+   close          None  None    None  None    None  None  
+   closed         None  None    None  None    None  None  
+   deformed       None  None    None  None    None  None  
+   empty          None  None    None  None    None  None  
+   far            None  None    None  None    False True  
+   folded         None  None    None  None    None  None  
+   full           None  None    None  None    False True  
+   has-hole       None  None    None  None    None  None  
+   high           None  None    None  None    None  None  
+   is-bendable    None  None    None  None    None  None  
+   is-fluid       None  None    None  None    None  None  
+   is-holdable    None  None    None  None    None  None  
+   is-rigid       None  None    False True    None  None  
+   is-spreadable  None  None    None  None    None  None  
+   is-tearable    None  None    None  None    None  None  
+   left           None  None    None  None    None  None  
+   low            None  None    None  None    None  None  
+   onsurface      None  None    None  None    None  None  
+   open           None  None    None  None    None  None  
+   right          None  None    None  None    None  None  
+   stacked        None  None    None  None    None  None  
+   stretched      None  None    None  None    None  None  
+   torn           None  None    None  None    None  None  
+   twisted        None  None    None  None    None  None  
+   upright        None  None    None  None    None  None  
+   visible        None  None    None  None    True  False  
+
+   +---------+    +--------+
+   predicates      p    ~p   
+   +---------+    +--------+
+   =              False True  
+   above          None  None 
+   attached       None  None 
+   behind         None  None 
+   fits           True  False
+   in             True  False
+   infront        None  None 
+   nextto         None  None 
+   on             None  None 
+   touching       False True  
+   under          None  None 
+
+  2. Effects/posconditions (first frame)
+
+   +---------------------------------------------------+
+                    hand         obj 1         obj 2
+   +---------+    +--------+    +--------+    +--------+
+   predicates      p   ~p        p    ~p       p    ~p 
+   +---------+    +--------+    +--------+    +--------+
+   broken         None  None    None  None    None  None
+   close          None  None    None  None    None  None
+   closed         None  None    None  None    None  None
+   deformed       None  None    None  None    None  None
+   empty          None  None    None  None    None  None
+   far            None  None    None  None    None  None
+   folded         None  None    None  None    None  None
+   full           None  None    None  None    None  None
+   has-hole       None  None    None  None    None  None
+   high           None  None    None  None    None  None
+   is-bendable    None  None    None  None    None  None
+   is-fluid       None  None    None  None    None  None
+   is-holdable    None  None    None  None    None  None
+   is-rigid       None  None    None  None    None  None
+   is-spreadable  None  None    None  None    None  None
+   is-tearable    None  None    None  None    None  None
+   left           None  None    None  None    None  None
+   low            None  None    None  None    None  None
+   onsurface      None  None    None  None    None  None
+   open           None  None    None  None    None  None
+   right          None  None    None  None    None  None
+   stacked        None  None    None  None    None  None
+   stretched      None  None    None  None    None  None
+   torn           None  None    None  None    None  None
+   twisted        None  None    None  None    None  None
+   upright        None  None    None  None    None  None
+   visible        None  None    None  None    None  None
+
+   +---------+    +--------+
+   predicates      p    ~p   
+   +---------+    +--------+
+   =              None  None
+   above          None  None
+   attached       None  None
+   behind         None  None
+   fits           None  None
+   in             True  False
+   infront        None  None
+   nextto         None  None
+   on             None  None
+   touching       False True 
+   under          None  None
+
+
+
